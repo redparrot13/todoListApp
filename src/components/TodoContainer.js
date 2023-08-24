@@ -1,8 +1,8 @@
-import React { useState } from 'react'
+import React, { useState } from 'react'
 import TodoInput from "./TodoInput"
 import TodoList from "./TodoList"
 
-const TodoContainer = () => {
+const TodoContainer = ({list}) => {
     const [todos, setTodos] = useState([])
 
     const handleAddTodo = newItem => {
@@ -19,13 +19,12 @@ const TodoContainer = () => {
     }
 
 
-
     const handleRemove = id => {
-        setTodos(prevTodos = > prevTodos, filter(todo => todo.id !===id))
+        setTodos(prevTodos => prevTodos.filter(todo => todo.id !==id))
     }
 return (
     <div className="todo-list-container">
-        <h2> Todo List</h2>
+        <h3>{list.name}</h3>
         <TodoInput onAdd={handleAddTodo}/>
         <TodoList todos={todos} onToggle={handleToggle} onRemove={handleRemove}/>
 
