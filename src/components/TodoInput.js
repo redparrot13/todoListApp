@@ -1,11 +1,24 @@
 import React, { useState } from 'react'
+
+
+
 const TodoInput = ({ onAdd }) => {
     const [newTodoItem, setNewTodoItem] = useState('')
+
+    const handleInputChange = event => {
+        setNewTodoItem(event.target.value)
+    }
 
     const handleAddClick = () => {
         if (newTodoItem.trim() !== '') {
             onAdd(newTodoItem)
             setNewTodoItem('')
+        }
+    }
+
+    const handleKeyPress = event => {
+        if (event.key ==='Enter') {
+            handleAddClick()
         }
     }
 
@@ -15,7 +28,8 @@ const TodoInput = ({ onAdd }) => {
                 type="text"
                 placeholder="Enter a new task"
                 value={newTodoItem}
-                onChange={event => setNewTodoItem(event.target.value)}
+                onChange={handleInputChange}
+                onKeyPress={handleKeyPress}
             />
             <button onClick={handleAddClick}>Add</button>
 
