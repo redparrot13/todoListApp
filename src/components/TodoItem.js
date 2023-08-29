@@ -1,6 +1,6 @@
 import React from 'react'
 import ToggleTodo from './ToggleTodo'
-import RemoveTodo from './RemoveItem'
+import RemoveTodo from './RemoveTask'
 
 const TodoItem = ({todo, onToggle, onRemove}) => {
     return (

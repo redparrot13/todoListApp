@@ -1,14 +1,20 @@
 import React, {useState} from 'react'
 
 const AddListButton = ({ onAddList }) => {
-    const [listName, setListName] = useState('');
+    const [listName, setListName] = useState('')
   
     const handleAddListClick = () => {
       if (listName !== '') {
-        onAddList(listName);
-        setListName(''); // Reset the input field after adding the list
+        onAddList(listName)
+        setListName('') // Reset the input field after adding the list
       }
-    };
+    }
+
+    const handleKeyPress = event => {
+        if (event.key ==='Enter') {
+            handleAddListClick()
+        }
+    }
   
     return (
       <div>
@@ -16,13 +22,13 @@ const AddListButton = ({ onAddList }) => {
           type="text"
           value={listName}
           onChange={(e) => setListName(e.target.value)}
+          onKeyPress={handleKeyPress}
           placeholder="Enter list name"
         />
         <button onClick={handleAddListClick}>Add New List</button>
       </div>
-    );
-  };
-
+    )
+  }
 
 
 

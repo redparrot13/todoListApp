@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
-import TodoInput from "./TodoInput"
+import TodoInput from "./AddTask"
 import TodoList from "./TodoList"
+import ListEntry from './ListEntry'
+import AddListButton from './AddList'
 
-const TodoContainer = ({list}) => {
+const TodoContainer = ({list, onToggleList, onRemoveList}) => {
     const [todos, setTodos] = useState([])
 
     const handleAddTodo = newItem => {
@@ -24,7 +26,9 @@ const TodoContainer = ({list}) => {
     }
 return (
     <div className="todo-list-container">
-        <h3>{list.name}</h3>
+        
+        <ListEntry list={list} onToggleList={onToggleList} onRemoveList={onRemoveList}/>
+        
         <TodoInput onAdd={handleAddTodo}/>
         <TodoList todos={todos} onToggle={handleToggle} onRemove={handleRemove}/>
 

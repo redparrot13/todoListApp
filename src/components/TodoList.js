@@ -1,7 +1,7 @@
 import React from 'react'
 import TodoItem from './TodoItem'
 import ToggleTodo from './ToggleTodo'
-import RemoveTodo from './RemoveItem'
+import RemoveTodo from './RemoveTask'
 
 
 const TodoList = ({ todos, onToggle, onRemove }) => {

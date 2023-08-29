@@ -1,2 +1,4 @@
 8/24/23  build a basic todo list app using chatgpt for help 
-    got multiple lists to work. want to be able to add a new list on 'Enter' as well as deleted old lists as have an option to check off complete lists.  
+    got multiple lists to work. want to be able to add a new list on 'Enter' as well as deleted old lists as have an option to check off complete lists.  Also want to learn how to place console log tests throughout.
+
+    

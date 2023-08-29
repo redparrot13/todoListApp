@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import './App.css'
 import TodoContainer from './components/TodoContainer'
-import AddListButton from './components/AddListButton'
+import AddListButton from './components/AddList'
 import TodoList from './components/TodoList'
-import TodoInput from './components/TodoInput'
+import TodoInput from './components/AddTask'
 
 
 function App() {
@@ -25,11 +25,12 @@ function App() {
 
   return (
     <div className="App">
-      <h1> The list of Lists App</h1>
+      <h1> The List of Lists</h1>
       {lists.map(list => (
         <TodoContainer key={list.id} list={list} />
       ))}
       <AddListButton onAddList={handleAddList} />
+
     </div>
   )
 }
