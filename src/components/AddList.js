@@ -4,7 +4,7 @@ const AddListButton = ({ onAddList }) => {
     const [listName, setListName] = useState('')
   
     const handleAddListClick = () => {
-      if (listName !== '') {
+      if (listName.trim() !== '') {
         onAddList(listName)
         setListName('') // Reset the input field after adding the list
       }

@@ -25,10 +25,8 @@ const TodoContainer = ({list, onToggleList, onRemoveList}) => {
         setTodos(prevTodos => prevTodos.filter(todo => todo.id !==id))
     }
 return (
-    <div className="todo-list-container">
-        
+    <div className="list-block">
         <ListEntry list={list} onToggleList={onToggleList} onRemoveList={onRemoveList}/>
-        
         <TodoInput onAdd={handleAddTodo}/>
         <TodoList todos={todos} onToggle={handleToggle} onRemove={handleRemove}/>
 

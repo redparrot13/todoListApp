@@ -18,7 +18,7 @@ function App() {
       todos: [],
     }
 
-    setLists(prevLists => [...prevLists, newList])
+    setLists((prevLists) => [...prevLists, newList])
   }
 
   console.log('Rendering app:', lists)
@@ -26,9 +26,11 @@ function App() {
   return (
     <div className="App">
       <h1> The List of Lists</h1>
+      <div className="list-container">
       {lists.map(list => (
         <TodoContainer key={list.id} list={list} />
       ))}
+      </div>
       <AddListButton onAddList={handleAddList} />
 
     </div>
