@@ -2,7 +2,7 @@ import React from 'react'
 
 const RemoveList = ({onRemove}) => {
     return (
-        <button onClick={onRemove}></button>
+        <button onClick={onRemove}>RemoveList</button>
     )
 }
 export default RemoveList
