@@ -21,6 +21,12 @@ function App() {
     setLists((prevLists) => [...prevLists, newList])
   }
 
+  const handleRemoveList = (listId) => {
+    // Implement the logic to remove the list with the provided listId
+    // Update the state to remove the specified list
+    setLists((prevLists) => prevLists.filter((list) => list.id !== listId));
+  };
+
   console.log('Rendering app:', lists)
 
   return (
@@ -28,7 +34,7 @@ function App() {
       <h1> The List of Lists</h1>
       <div className="list-container">
       {lists.map(list => (
-        <TodoContainer key={list.id} list={list} />
+        <TodoContainer key={list.id} list={list} onRemoveList={handleRemoveList} />
       ))}
       </div>
       <AddListButton onAddList={handleAddList} />
