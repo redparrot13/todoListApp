@@ -67,7 +67,7 @@ function App() {
   }
 
   const handleRemove = (id) => {
-    setTodos(prevTodos => 
+    setTodos(prevTodos =>
       prevTodos.filter(todo => todo.id !== id)
       )
   }

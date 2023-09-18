@@ -1,6 +1,6 @@
 import React from 'react'
 import ToggleList from './ToggleList'
-//import RemoveList from './RemoveList'
+
 
 const ListEntry = ({ list, onToggleList,  }) => {
     return (
@@ -9,10 +9,6 @@ const ListEntry = ({ list, onToggleList,  }) => {
             <ToggleList completed={list.completed} onToggleList={() => onToggleList(list.id)} />
 
 
-            {/*<RemoveList onRemoveList={() => {
-                console.log("clicked  remove list in ListEntry")
-                onRemoveList(list.id)
-            }} /> */}
 
         </div>
     )
